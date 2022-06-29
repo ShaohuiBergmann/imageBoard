@@ -1,0 +1,29 @@
+* {
+    background-color: bisque;
+}
+
+p{
+    text-align: center;
+    color: darkgoldenrod;
+}
+
+#main {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+img{
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    object-fit: cover;
+}
+
+.cards{
+    border: 3px dotted black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
