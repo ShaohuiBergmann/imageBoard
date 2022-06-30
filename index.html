@@ -11,6 +11,13 @@
     <h1>I 💘 PIXELS</h1>
         <h2>Latest Images</h2>
     <div id="main" v-if="images.length">
+        <form method="post" action="/upload" enctype="multipart/form-data" @submit="handleSubmit">
+            <input name="title" placeholder="Title">
+            <input name="user" placeholder="User">
+            <input name="image" type= "file" accept="image/*" >
+            <button>Submit</button>
+
+        </form>
          <div v-for="image in images" :key="image.id" class="cards" >
             <img :src= image.url alt="Loading">
             <p>{{image.title}}</p>

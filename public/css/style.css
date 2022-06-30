@@ -10,6 +10,8 @@ p{
 #main {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+
     
 }
 
@@ -26,4 +28,12 @@ img{
     flex-direction: column;
     justify-content: center;
 
+}
+form {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

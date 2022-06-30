@@ -10,5 +10,6 @@ const db = spicedPg(
 );
 
 module.exports.getImaged = () => {
-    return db.query(`SELECT * FROM images;`);
+    return db.query(`SELECT * FROM images
+         ORDER BY id DESC;`);
 };

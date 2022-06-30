@@ -14,15 +14,22 @@ Vue.createApp({
         fetch("/images")
             .then((res) => res.json())
             .then((data) => {
-                console.log(("data", data))
                 this.images = data;
             });
     },
 
     methods: {
         // this is where we define our functions
-        myfirstFn: function (city) {
-            console.log("my function is runniing ====city name is ", city);
-        },
+        // stay in the same route
+        handleSubmit(e) {
+            e.preventDefault();
+            console.log("handle submit");
+            fetch("/upload", {
+                method: "POST",
+                body: new FormData(e.target)
+            })
+            .then((res) => res.json())
+            .then((data) => console.log(data))
+        }
     },
 }).mount("#main");
