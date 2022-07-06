@@ -42,7 +42,7 @@ module.exports.getMoreImg = (id) => {
 FROM images
 WHERE id < $1
 ORDER BY id DESC
-LIMIT 10;`,
+LIMIT 6;`,
         [id]
     );
 };

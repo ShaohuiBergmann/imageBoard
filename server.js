@@ -48,10 +48,9 @@ app.get("/upload/:id", (req, res) => {
 
     db.getInfo(req.params.id)
         .then((results) => {
-            if(results.rows[0]){
+            if (results.rows[0]) {
                 res.json(results.rows[0]);
-            }
-            else {
+            } else {
                 res.json({});
             }
         })
@@ -61,8 +60,6 @@ app.get("/upload/:id", (req, res) => {
 });
 
 app.post("/upload", uploader.single("image"), s3.upload, (req, res) => {
-    console.log(req.file.filename);
-    console.log("req.body", req.body);
     db.insertInfo(
         "https://s3.amazonaws.com/spicedling/" + req.file.filename,
         req.body.user,
@@ -101,7 +98,6 @@ app.post("/comment", (req, res) => {
 app.get("/comments/:imageId", (req, res) => {
     db.getComments(req.params.imageId)
         .then((results) => {
-            console.log(results.rows);
             res.json(results.rows);
         })
         .catch((err) => {

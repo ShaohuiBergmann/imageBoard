@@ -34,7 +34,7 @@ const modalComponent = {
          <section id="imageContainer"> 
          <span @click="closeModal" class="close">&times;</span>
          <img v-if="image.url" :src="image.url" alt="Loading" :key="image.id" >
-         <h3 v-else="!image.url">Image not found.</h3>
+         <h3 class="notFound" v-else="!image.url">Image not found.</h3>
          <h3 v-if="image.url"> Username: {{image.username}} </h3>
          <h4 v-if="image.url">Title: {{image.title}}</h4>
          <p v-if="image.url">Description: {{image.description}}</p>

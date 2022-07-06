@@ -11,7 +11,7 @@
 <body>
 
 <!--this container is for our Vue instance-->
-    <h1>Beijing is the BEST!</h1>
+    <h1 id="best">Beijing is the BEST!</h1>
         
     <div id="main" v-if="images.length" :selected-image = "selectedImage">
         <modal-component v-if = "selectedImage" v-bind:track-id = "selectedImage" @close="closeImg"></modal-component>
@@ -21,14 +21,16 @@
             <input name="user" placeholder="User" required>            <input name="description" placeholder="Description"vrequired>
             <input  class="file" name="image" type= "file" accept="image/*" >
 
-            <button name="submit">Submit</button>
+            <button style="width: 80px;" name="submit">Submit</button>
 
         </form>
         </div>
+        <div class="imageContainer">
          <div v-for="image in images" :key="image.id" class="cards" >
             <img :src= image.url alt="Loading" @click="trackId(image.id)">
             <p>{{image.title}}</p>
          </div> 
+         </div>
          <div v-if="moreImages" id="more"><button class="more" style="width: 80px;" @click="moreImg">MORE </button></div>
     </div>
     <script src="/js/app.js" type="module" crossorigin="use-credentials"></script>
